@@ -3,33 +3,39 @@ import '../styles/global.css';
 
 const projects = [
   {
-    fn: 'buildShardedCache()',
-    summary: 'An in-memory key-value store that shards data across nodes with consistent hashing and replication.',
-    tags: ['Go', 'gRPC', 'Docker'],
-    repo: 'https://github.com/yourname/sharded-cache',
-    demo: null,
+    fn: 'quantifyLDMSOverhead()',
+    summary: 'Designed and ran a study confirming the Lightweight Distributed Metric Service (LDMS) adds under 1% overhead to HPC application performance, then built a containerized CI/CD pipeline with Slurm and Flux to automate testing against virtual nodes.',
+    tags: ['C', 'Slurm', 'CI/CD', 'SQL'],
+    repo: 'https://github.com/alexknigge',
+    link: { label: 'paper', url: 'https://doi.org/10.5281/zenodo.17554817' },
   },
   {
-    fn: 'compileMiniLang()',
-    summary: 'A small interpreted language with a hand-written lexer, recursive-descent parser, and tree-walking evaluator.',
-    tags: ['TypeScript', 'Compilers', 'CLI'],
-    repo: 'https://github.com/yourname/minilang',
-    demo: 'https://minilang.example.com',
+    fn: 'competeWithHPCTeam()',
+    summary: 'Co-founded and managed the UNM High-Performance Computing Team. Benchmarked clusters with HPL, HPCG, and MLPerf, then compiled and ran HPC applications like ICON, WRF, and GROMACS for the SC23, SC24, and ISC24 Student Cluster Competitions.',
+    tags: ['MPI', 'Slurm', 'Linux', 'Benchmarking'],
+    repo: 'https://github.com/alexknigge',
+    link: null,
   },
   {
-    fn: 'trackStudyHours()',
-    summary: 'A full-stack app for logging study sessions, visualizing trends, and setting weekly goals.',
-    tags: ['React', 'Node', 'PostgreSQL'],
-    repo: 'https://github.com/yourname/study-tracker',
-    demo: 'https://studytracker.example.com',
+    fn: 'simulateCoralReefForaging()',
+    summary: 'Implemented UPC++ parallelization for a large-scale agent-based model simulating fish foraging behavior on coral reefs, optimizing agent interactions across the environment.',
+    tags: ['C++', 'UPC++', 'Parallel Computing'],
+    repo: 'https://github.com/alexknigge',
+    link: null,
+  },
+  {
+    fn: 'benchmarkGraceHopper()',
+    summary: 'Wrote CUDA benchmarks to stress-test Grace-Hopper nodes and automated data collection with NVIDIA-SMI, NSIGHT, and Bash to compare CPU vs. GPU power usage under heavy workloads.',
+    tags: ['CUDA', 'C++', 'Bash'],
+    repo: 'https://github.com/alexknigge',
+    link: null,
   },
 ];
 
 const skills = {
-  languages: ['Python', 'TypeScript', 'Go', 'C++', 'SQL'],
-  frameworks: ['React', 'Astro', 'Node.js', 'Express'],
-  tools: ['Git', 'Docker', 'Linux', 'PostgreSQL'],
-  currently_learning: ['Rust', 'Kubernetes'],
+  languages: ['C++', 'C', 'Python', 'Java', 'Haskell', 'SQL'],
+  parallel_computing: ['MPI', 'CUDA', 'OpenMP', 'OpenACC', 'UPC++'],
+  hpc_systems: ['Linux', 'Slurm', 'Singularity', 'Warewulf', 'GNU Parallel'],
 };
 ---
 
@@ -38,8 +44,8 @@ const skills = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alex Knigge — Portfolio</title>
-    <meta name="description" content="Alex Knigge — High Performance Computing Jack of All Trades." />
+    <title>Alexandra Knigge — Portfolio</title>
+    <meta name="description" content="Alexandra Knigge — CS researcher focused on high-performance and parallel computing." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -71,16 +77,16 @@ const skills = {
         <!-- Hero -->
         <header class="hero" id="top">
           <pre class="code"><code><span class="c-comment">// portfolio.ts</span>
-<span class="c-key">import</span> {'{'} Developer {'}'} <span class="c-key">from</span> <span class="c-str">'@me/profile'</span>;
+<span class="c-key">import</span> {'{'} Researcher {'}'} <span class="c-key">from</span> <span class="c-str">'@me/profile'</span>;
 
-<span class="c-key">const</span> <span class="c-var">alex</span> = <span class="c-key">new</span> <span class="c-fn">Developer</span>({'{'}
-  name: <span class="c-str">'Alex Knigge'</span>,
-  role: <span class="c-str">'HPC Jack of all Trades'</span>,
-  focus: [<span class="c-str">'high performance computing'</span>, <span class="c-str">'system monitoring'</span>, <span class="c-str">'benchmarking'</span>],
-  status: <span class="c-str">'Open to PhD Programs and Internships'</span>,
+<span class="c-key">const</span> <span class="c-var">alexandra</span> = <span class="c-key">new</span> <span class="c-fn">Researcher</span>({'{'}
+  name: <span class="c-str">'Alexandra Knigge'</span>,
+  role: <span class="c-str">'CS @ UNM — HPC &amp; parallel computing'</span>,
+  focus: [<span class="c-str">'high-performance computing'</span>, <span class="c-str">'parallel computing'</span>, <span class="c-str">'systems benchmarking'</span>],
+  status: <span class="c-str">'R&amp;D Intern @ Sandia National Laboratories'</span>,
 {'}'});
 
-<span class="c-key">export default</span> <span class="c-var">alex</span>;</code></pre>
+<span class="c-key">export default</span> <span class="c-var">alexandra</span>;</code></pre>
         </header>
 
         <!-- About -->
@@ -89,10 +95,22 @@ const skills = {
           <div class="file-body">
             <h2>About</h2>
             <p>
-              I am Post-Bach R&D Intern at Sandia National Laboratories working on monitoring the high performance computing clusters across Sandia. I work with LDMS (Lightweight Distributed Metric Service) and enable the users of Sandia's HPCs to see their data in new ways in realtime. I have been working in HPC since 2023, when I competed in Dan Old's Winter Classic Competition. I have since competed in SCC, ISC SCC, and coached several competitions. 
+              I'm a Computer Science graduate from the University of New Mexico
+              (B.S., summa cum laude, minor in Mathematics) with a focus on
+              high-performance and parallel computing. Most of my work lives at
+              the intersection of systems and performance: profiling monitoring
+              frameworks, parallelizing simulations with MPI and UPC++, and
+              squeezing more out of GPU and CPU clusters.
             </p>
             <p>
-		Outside of work, I like to travel (I have been to 5 continents!), tinker with my gaming setup and play all kinds of games, and get outside! I ran the Wise Pies 5k and plan to keep running, hiking, climbing, kayaking, and more in my free time. I am also PADI Open Water Scuba certified and love adventures that take me diving!
+              I'm currently an R&amp;D Intern at Sandia National Laboratories, where
+              I study the overhead of HPC monitoring tools and build CI/CD
+              pipelines for testing distributed systems. I also co-founded and
+              manage UNM's HPC Student Cluster Competition team, competing at
+              SC23, SC24, and ISC24, and previously served as a TA for HPC and
+              Data Organization in C. I'm a Goldwater Scholar and National
+              Hispanic Scholar, and I served as president of UNM's Women in
+              Computing club.
             </p>
           </div>
         </section>
@@ -114,10 +132,10 @@ const skills = {
                   </ul>
                   <div class="project-links">
                     <a href={p.repo} target="_blank" rel="noreferrer">repo</a>
-                    {p.demo && (
+                    {p.link && (
                       <>
                         <span aria-hidden="true">·</span>
-                        <a href={p.demo} target="_blank" rel="noreferrer">demo</a>
+                        <a href={p.link.url} target="_blank" rel="noreferrer">{p.link.label}</a>
                       </>
                     )}
                   </div>
@@ -133,19 +151,12 @@ const skills = {
           <div class="file-body">
             <h2>Skills</h2>
             <pre class="code json"><code><span class="c-punct">{'{'}</span>
-  <span class="c-str">"languages"</span><span class="c-punct">:</span> [{skills.languages.map((s, i) => (
-    <><span class="c-str">"{s}"</span>{i < skills.languages.length - 1 ? <span class="c-punct">, </span> : null}</>
-  ))}],
-  <span class="c-str">"frameworks"</span><span class="c-punct">:</span> [{skills.frameworks.map((s, i) => (
-    <><span class="c-str">"{s}"</span>{i < skills.frameworks.length - 1 ? <span class="c-punct">, </span> : null}</>
-  ))}],
-  <span class="c-str">"tools"</span><span class="c-punct">:</span> [{skills.tools.map((s, i) => (
-    <><span class="c-str">"{s}"</span>{i < skills.tools.length - 1 ? <span class="c-punct">, </span> : null}</>
-  ))}],
-  <span class="c-str">"currently_learning"</span><span class="c-punct">:</span> [{skills.currently_learning.map((s, i) => (
-    <><span class="c-str">"{s}"</span>{i < skills.currently_learning.length - 1 ? <span class="c-punct">, </span> : null}</>
-  ))}]
-<span class="c-punct">{'}'}</span></code></pre>
+{Object.entries(skills).map(([key, values], gi) => (
+  <>  <span class="c-str">"{key}"</span><span class="c-punct">:</span> [{values.map((s, i) => (
+    <><span class="c-str">"{s}"</span>{i < values.length - 1 ? <span class="c-punct">, </span> : null}</>
+  ))}]{gi < Object.entries(skills).length - 1 ? <span class="c-punct">,</span> : null}
+</>
+))}<span class="c-punct">{'}'}</span></code></pre>
           </div>
         </section>
 
@@ -155,16 +166,16 @@ const skills = {
           <div class="file-body">
             <h2>Contact</h2>
             <pre class="code sh"><code><span class="c-prompt">$</span> echo <span class="c-var">$EMAIL</span>
-<a class="c-link" href="mailto:alex@example.com">alex@example.com</a>
+<a class="c-link" href="mailto:alex.m.knigge@gmail.com">alex.m.knigge@gmail.com</a>
 
 <span class="c-prompt">$</span> open <span class="c-var">$GITHUB</span>
-<a class="c-link" href="https://github.com/yourname" target="_blank" rel="noreferrer">github.com/yourname</a>
+<a class="c-link" href="https://github.com/alexknigge" target="_blank" rel="noreferrer">github.com/alexknigge</a>
 
 <span class="c-prompt">$</span> open <span class="c-var">$LINKEDIN</span>
-<a class="c-link" href="https://linkedin.com/in/yourname" target="_blank" rel="noreferrer">linkedin.com/in/yourname</a>
+<a class="c-link" href="https://linkedin.com/in/alex-knigge" target="_blank" rel="noreferrer">linkedin.com/in/alex-knigge</a>
 
 <span class="c-prompt">$</span> curl -O <span class="c-var">$RESUME</span>
-<a class="c-link" href="/resume.pdf">resume.pdf</a></code></pre>
+<a class="c-link" href="/CV-Knigge-2026.pdf">CV-Knigge-2026.pdf</a></code></pre>
           </div>
         </section>
 
@@ -512,3 +523,4 @@ const skills = {
     </style>
   </body>
 </html>
+
