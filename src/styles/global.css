@@ -1,0 +1,85 @@
+/* ============================================
+   Design tokens
+   ============================================ */
+:root {
+  /* Palette */
+  --bg: #14111f;
+  --bg-raised: #1c1830;
+  --bg-tab: #19152a;
+  --border: #2e2848;
+
+  --text: #e9e4f7;
+  --text-dim: #9089ab;
+  --text-faint: #524c6e;
+
+  --accent-purple: #c9a6ff;  /* keywords */
+  --accent-cyan: #7fe3e0;    /* strings / .tsx */
+  --accent-amber: #ffcd7a;   /* numbers / .json */
+  --accent-green: #9bdba0;   /* comments / .md */
+  --accent-pink: #ff9ec4;    /* .sh */
+
+  /* Type */
+  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* Baseline grid: every line-height and vertical margin is a
+     multiple of this unit, so the gutter numbers stay aligned. */
+  --line: 28px;
+
+  /* Layout */
+  --gutter-w: 64px;
+  --content-w: 760px;
+}
+
+/* ============================================
+   Reset
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: var(--line);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible keyboard focus */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
