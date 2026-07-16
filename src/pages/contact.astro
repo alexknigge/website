@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../pages/base.astro';
+import '../styles/global.css';
+---
+
+<BaseLayout activeTab="contact" title="Contact — Alex Knigge">
+  <section id="contact" class="file">
+    <div class="file-bar" style="--tab-color: var(--accent-pink)">contact<span class="ext">.sh</span></div>
+    <div class="file-body">
+      <h2>Contact</h2>
+      <pre class="code sh"><code><span class="c-prompt">$</span> echo <span class="c-var">$EMAIL</span>
+<a class="c-link" href="mailto:alex.m.knigge@gmail.com">alex.m.knigge@gmail.com</a>
+
+<span class="c-prompt">$</span> open <span class="c-var">$GITHUB</span>
+<a class="c-link" href="https://github.com/alexknigge" target="_blank" rel="noreferrer">github.com/alexknigge</a>
+
+<span class="c-prompt">$</span> open <span class="c-var">$LINKEDIN</span>
+<a class="c-link" href="https://linkedin.com/in/alex-knigge" target="_blank" rel="noreferrer">linkedin.com/in/alex-knigge</a>
+
+<span class="c-prompt">$</span> curl -O <span class="c-var">$RESUME</span>
+<a class="c-link" href="/CV-Knigge-2026.pdf">CV-Knigge-2026.pdf</a></code></pre>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../pages/base.astro';
+import '../styles/global.css';
+
+const skills = {
+  languages: ['C++', 'C', 'Python', 'Java', 'Haskell', 'SQL'],
+  parallel_computing: ['MPI', 'CUDA', 'OpenMP', 'OpenACC', 'UPC++'],
+  hpc_systems: ['Linux', 'Slurm', 'Singularity', 'Warewulf', 'GNU Parallel'],
+};
+---
+
+<BaseLayout activeTab="skills" title="Skills — Alex Knigge">
+  <section id="skills" class="file">
+    <div class="file-bar" style="--tab-color: var(--accent-amber)">skills<span class="ext">.json</span></div>
+    <div class="file-body">
+      <h2>Skills</h2>
+      <pre class="code json"><code><span class="c-punct">{'{'}</span>
+{Object.entries(skills).map(([key, values], gi) => (
+  <>  <span class="c-str">"{key}"</span><span class="c-punct">:</span> [{values.map((s, i) => (
+    <><span class="c-str">"{s}"</span>{i < values.length - 1 ? <span class="c-punct">, </span> : null}</>
+  ))}]{gi < Object.entries(skills).length - 1 ? <span class="c-punct">,</span> : null}
+</>
+))}<span class="c-punct">{'}'}</span></code></pre>
+    </div>
+  </section>
+</BaseLayout>

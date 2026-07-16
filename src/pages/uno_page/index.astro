@@ -1,0 +1,526 @@
+---
+import '../styles/global.css';
+
+const projects = [
+  {
+    fn: 'quantifyLDMSOverhead()',
+    summary: 'Designed and ran a study confirming the Lightweight Distributed Metric Service (LDMS) adds under 1% overhead to HPC application performance, then built a containerized CI/CD pipeline with Slurm and Flux to automate testing against virtual nodes.',
+    tags: ['C', 'Slurm', 'CI/CD', 'SQL'],
+    repo: 'https://github.com/alexknigge',
+    link: { label: 'paper', url: 'https://doi.org/10.5281/zenodo.17554817' },
+  },
+  {
+    fn: 'competeWithHPCTeam()',
+    summary: 'Co-founded and managed the UNM High-Performance Computing Team. Benchmarked clusters with HPL, HPCG, and MLPerf, then compiled and ran HPC applications like ICON, WRF, and GROMACS for the SC23, SC24, and ISC24 Student Cluster Competitions.',
+    tags: ['MPI', 'Slurm', 'Linux', 'Benchmarking'],
+    repo: 'https://github.com/alexknigge',
+    link: null,
+  },
+  {
+    fn: 'simulateCoralReefForaging()',
+    summary: 'Implemented UPC++ parallelization for a large-scale agent-based model simulating fish foraging behavior on coral reefs, optimizing agent interactions across the environment.',
+    tags: ['C++', 'UPC++', 'Parallel Computing'],
+    repo: 'https://github.com/BCLab-UNM/simreef',
+    link: null,
+  },
+  {
+    fn: 'benchmarkGraceHopper()',
+    summary: 'Wrote CUDA benchmarks to stress-test Grace-Hopper nodes and automated data collection with NVIDIA-SMI, NSIGHT, and Bash to compare CPU vs. GPU power usage under heavy workloads.',
+    tags: ['CUDA', 'C++', 'Bash'],
+    repo: 'https://github.com/alexknigge',
+    link: null,
+  },
+];
+
+const skills = {
+  languages: ['C++', 'C', 'Python', 'Java', 'Haskell', 'SQL'],
+  parallel_computing: ['MPI', 'CUDA', 'OpenMP', 'OpenACC', 'UPC++'],
+  hpc_systems: ['Linux', 'Slurm', 'Singularity', 'Warewulf', 'GNU Parallel'],
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alex Knigge — Portfolio</title>
+    <meta name="description" content="Alex Knigge — CS researcher focused on high-performance and parallel computing." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="gutter" id="gutter" aria-hidden="true"></div>
+
+    <div class="frame">
+      <nav class="tabs" aria-label="Sections">
+        <a href="#about" class="tab" data-tab="about" style="--tab-color: var(--accent-green)">
+          about<span class="ext">.md</span>
+        </a>
+        <a href="#projects" class="tab" data-tab="projects" style="--tab-color: var(--accent-cyan)">
+          projects<span class="ext">.tsx</span>
+        </a>
+        <a href="#skills" class="tab" data-tab="skills" style="--tab-color: var(--accent-amber)">
+          skills<span class="ext">.json</span>
+        </a>
+        <a href="#contact" class="tab" data-tab="contact" style="--tab-color: var(--accent-pink)">
+          contact<span class="ext">.sh</span>
+        </a>
+      </nav>
+
+      <main class="content">
+        <!-- Hero -->
+        <header class="hero" id="top">
+          <pre class="code"><code><span class="c-comment">// portfolio.ts</span>
+<span class="c-key">import</span> {'{'} Researcher {'}'} <span class="c-key">from</span> <span class="c-str">'@me/profile'</span>;
+
+<span class="c-key">const</span> <span class="c-var">alex</span> = <span class="c-key">new</span> <span class="c-fn">Researcher</span>({'{'}
+  name: <span class="c-str">'Alex Knigge'</span>,
+  role: <span class="c-str">'CS @ UNM — HPC &amp; parallel computing'</span>,
+  focus: [<span class="c-str">'high-performance computing'</span>, <span class="c-str">'parallel computing'</span>, <span class="c-str">'systems benchmarking'</span>],
+  status: <span class="c-str">'R&amp;D Intern @ Sandia National Laboratories'</span>,
+{'}'});
+
+<span class="c-key">export default</span> <span class="c-var">alex</span>;</code></pre>
+        </header>
+
+        <!-- About -->
+        <section id="about" class="file">
+          <div class="file-bar" style="--tab-color: var(--accent-green)">about<span class="ext">.md</span></div>
+          <div class="file-body">
+            <h2>About</h2>
+            <p>
+              I'm a Computer Science graduate from the University of New Mexico
+              (B.S., summa cum laude, minor in Mathematics) with a focus on
+              high-performance and parallel computing. Most of my work lives at
+              the intersection of systems and performance: profiling monitoring
+              frameworks, parallelizing simulations with MPI and UPC++, and
+              squeezing more out of GPU and CPU clusters.
+            </p>
+            <p>
+              I'm currently an R&amp;D Intern at Sandia National Laboratories, where
+              I study the overhead of HPC monitoring tools and build CI/CD
+              pipelines for testing distributed systems. I also co-founded and
+              coach UNM's HPC Student Cluster Competition team, competing at
+              SC23, SC24, SC25, and ISC24, and previously served as a TA for HPC and
+              Data Organization in C. I'm a Goldwater Scholar and National
+              Hispanic Scholar, and I served as president of UNM's Women in
+              Computing club.
+            </p>
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="file">
+          <div class="file-bar" style="--tab-color: var(--accent-cyan)">projects<span class="ext">.tsx</span></div>
+          <div class="file-body">
+            <h2>Projects</h2>
+            <div class="project-list">
+              {projects.map((p) => (
+                <article class="project">
+                  <h3 class="project-fn">
+                    <span class="c-key">function</span> <span class="c-fn">{p.fn}</span>
+                  </h3>
+                  <p class="project-summary">{p.summary}</p>
+                  <ul class="tags">
+                    {p.tags.map((t) => <li class="tag">{t}</li>)}
+                  </ul>
+                  <div class="project-links">
+                    <a href={p.repo} target="_blank" rel="noreferrer">repo</a>
+                    {p.link && (
+                      <>
+                        <span aria-hidden="true">·</span>
+                        <a href={p.link.url} target="_blank" rel="noreferrer">{p.link.label}</a>
+                      </>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="file">
+          <div class="file-bar" style="--tab-color: var(--accent-amber)">skills<span class="ext">.json</span></div>
+          <div class="file-body">
+            <h2>Skills</h2>
+            <pre class="code json"><code><span class="c-punct">{'{'}</span>
+{Object.entries(skills).map(([key, values], gi) => (
+  <>  <span class="c-str">"{key}"</span><span class="c-punct">:</span> [{values.map((s, i) => (
+    <><span class="c-str">"{s}"</span>{i < values.length - 1 ? <span class="c-punct">, </span> : null}</>
+  ))}]{gi < Object.entries(skills).length - 1 ? <span class="c-punct">,</span> : null}
+</>
+))}<span class="c-punct">{'}'}</span></code></pre>
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="file">
+          <div class="file-bar" style="--tab-color: var(--accent-pink)">contact<span class="ext">.sh</span></div>
+          <div class="file-body">
+            <h2>Contact</h2>
+            <pre class="code sh"><code><span class="c-prompt">$</span> echo <span class="c-var">$EMAIL</span>
+<a class="c-link" href="mailto:alex.m.knigge@gmail.com">alex.m.knigge@gmail.com</a>
+
+<span class="c-prompt">$</span> open <span class="c-var">$GITHUB</span>
+<a class="c-link" href="https://github.com/alexknigge" target="_blank" rel="noreferrer">github.com/alexknigge</a>
+
+<span class="c-prompt">$</span> open <span class="c-var">$LINKEDIN</span>
+<a class="c-link" href="https://linkedin.com/in/alex-knigge" target="_blank" rel="noreferrer">linkedin.com/in/alex-knigge</a>
+
+<span class="c-prompt">$</span> curl -O <span class="c-var">$RESUME</span>
+<a class="c-link" href="/CV-Knigge-2026.pdf">CV-Knigge-2026.pdf</a></code></pre>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <p>Built with Astro · Deployed on Cloudflare Pages</p>
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      // Populate the gutter with line numbers based on document height,
+      // keeping the baseline grid (var(--line)) in sync.
+      const gutter = document.getElementById('gutter');
+
+      function renderGutter() {
+        const line = parseFloat(
+          getComputedStyle(document.documentElement).getPropertyValue('--line')
+        );
+        const total = Math.ceil(document.body.scrollHeight / line) + 4;
+        const current = gutter.children.length;
+
+        if (current < total) {
+          const frag = document.createDocumentFragment();
+          for (let i = current + 1; i <= total; i++) {
+            const span = document.createElement('span');
+            span.textContent = String(i).padStart(3, '0');
+            frag.appendChild(span);
+          }
+          gutter.appendChild(frag);
+        } else if (current > total) {
+          for (let i = current; i > total; i--) {
+            gutter.removeChild(gutter.lastChild);
+          }
+        }
+      }
+
+      renderGutter();
+      window.addEventListener('resize', renderGutter);
+      new ResizeObserver(renderGutter).observe(document.body);
+
+      // Highlight the active "tab" based on scroll position.
+      const tabs = document.querySelectorAll('.tab');
+      const sections = document.querySelectorAll('.file, .hero');
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.id;
+              tabs.forEach((tab) => {
+                tab.classList.toggle('active', tab.dataset.tab === id);
+              });
+            }
+          });
+        },
+        { rootMargin: '-40% 0px -55% 0px' }
+      );
+
+      sections.forEach((s) => observer.observe(s));
+    </script>
+
+    <style>
+      /* ============================================
+         Gutter — persistent line numbers
+         ============================================ */
+      .gutter {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: var(--gutter-w);
+        padding-top: calc(var(--line) * 2);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0;
+        background: var(--bg);
+        border-right: 1px solid var(--border);
+        overflow: hidden;
+        user-select: none;
+        z-index: 5;
+      }
+
+      .gutter span {
+        display: block;
+        height: var(--line);
+        line-height: var(--line);
+        padding-right: 14px;
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--text-faint);
+        white-space: nowrap;
+      }
+
+      @media (max-width: 720px) {
+        .gutter {
+          display: none;
+        }
+      }
+
+      /* ============================================
+         Frame / layout
+         ============================================ */
+      .frame {
+        margin-left: var(--gutter-w);
+        min-height: 100vh;
+      }
+
+      @media (max-width: 720px) {
+        .frame {
+          margin-left: 0;
+        }
+      }
+
+      .content {
+        max-width: var(--content-w);
+        margin: 0 auto;
+        padding: calc(var(--line) * 2) 24px calc(var(--line) * 4);
+      }
+
+      /* ============================================
+         Tabs
+         ============================================ */
+      .tabs {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        gap: 1px;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        overflow-x: auto;
+      }
+
+      .tab {
+        flex: 0 0 auto;
+        padding: 12px 18px;
+        font-family: var(--font-mono);
+        font-size: 13px;
+        color: var(--text-dim);
+        text-decoration: none;
+        background: var(--bg-tab);
+        border-right: 1px solid var(--border);
+        border-bottom: 2px solid transparent;
+        transition: color 0.15s ease, border-color 0.15s ease;
+        white-space: nowrap;
+      }
+
+      .tab .ext {
+        color: var(--tab-color);
+      }
+
+      .tab:hover {
+        color: var(--text);
+      }
+
+      .tab.active {
+        color: var(--text);
+        border-bottom-color: var(--tab-color);
+        background: var(--bg-raised);
+      }
+
+      /* ============================================
+         Hero / code block
+         ============================================ */
+      .hero {
+        padding-top: var(--line);
+        padding-bottom: calc(var(--line) * 1.5);
+      }
+
+      .code {
+        margin: 0;
+        font-family: var(--font-mono);
+        font-size: 14px;
+        line-height: var(--line);
+        color: var(--text);
+        white-space: pre;
+        overflow-x: auto;
+      }
+
+      .c-comment { color: var(--text-dim); }
+      .c-key     { color: var(--accent-purple); }
+      .c-str     { color: var(--accent-cyan); }
+      .c-var     { color: var(--text); }
+      .c-fn      { color: var(--accent-amber); }
+      .c-punct   { color: var(--text-dim); }
+      .c-prompt  { color: var(--accent-pink); }
+      .c-link    { color: var(--accent-cyan); text-decoration: underline; text-decoration-color: var(--border); }
+      .c-link:hover { text-decoration-color: var(--accent-cyan); }
+
+      /* ============================================
+         File sections
+         ============================================ */
+      .file {
+        margin-top: calc(var(--line) * 2);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        overflow: hidden;
+        background: var(--bg-raised);
+      }
+
+      .file-bar {
+        padding: 10px 18px;
+        font-family: var(--font-mono);
+        font-size: 13px;
+        color: var(--text-dim);
+        background: var(--bg-tab);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .file-bar .ext {
+        color: var(--tab-color);
+      }
+
+      .file-body {
+        padding: var(--line) 28px calc(var(--line) * 1.5);
+      }
+
+      .file-body h2 {
+        margin: 0 0 var(--line);
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        line-height: var(--line);
+        color: var(--text);
+      }
+
+      .file-body p {
+        margin: 0 0 var(--line);
+        font-size: 16px;
+        line-height: var(--line);
+        color: var(--text-dim);
+        max-width: 64ch;
+      }
+
+      .file-body p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ============================================
+         Projects
+         ============================================ */
+      .project-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--line);
+      }
+
+      .project {
+        padding-top: calc(var(--line) * 0.5);
+        border-top: 1px solid var(--border);
+      }
+
+      .project:first-child {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      .project-fn {
+        margin: 0 0 calc(var(--line) * 0.5);
+        font-family: var(--font-mono);
+        font-size: 15px;
+        font-weight: 500;
+        line-height: var(--line);
+      }
+
+      .project-summary {
+        margin: 0 0 calc(var(--line) * 0.5);
+        color: var(--text-dim);
+        font-size: 15px;
+        line-height: var(--line);
+        max-width: 60ch;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        list-style: none;
+        margin-bottom: calc(var(--line) * 0.5);
+      }
+
+      .tag {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--text-dim);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 2px 8px;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 8px;
+        font-family: var(--font-mono);
+        font-size: 13px;
+      }
+
+      .project-links a {
+        color: var(--accent-cyan);
+        text-decoration: none;
+      }
+
+      .project-links a:hover {
+        text-decoration: underline;
+      }
+
+      .project-links span {
+        color: var(--text-faint);
+      }
+
+      /* ============================================
+         JSON / shell code blocks inside file-body
+         ============================================ */
+      .file-body .code {
+        margin-top: calc(var(--line) * -0.25);
+      }
+
+      .sh .c-link {
+        color: var(--accent-cyan);
+        text-decoration: none;
+      }
+
+      .sh .c-link:hover {
+        text-decoration: underline;
+      }
+
+      /* ============================================
+         Footer
+         ============================================ */
+      .footer {
+        margin-top: calc(var(--line) * 2);
+        padding-top: var(--line);
+        border-top: 1px solid var(--border);
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--text-faint);
+        text-align: center;
+      }
+
+      .footer p {
+        margin: 0;
+        line-height: var(--line);
+      }
+    </style>
+  </body>
+</html>
+
